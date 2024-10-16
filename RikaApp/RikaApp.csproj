@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\css\scss\components\" />
     <Folder Include="wwwroot\css\scss\sections\" />
   </ItemGroup>
