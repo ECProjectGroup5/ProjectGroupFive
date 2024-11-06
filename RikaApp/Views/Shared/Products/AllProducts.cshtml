@@ -11,18 +11,21 @@
         <div class="productCard">
             @foreach (var product in Model.Products)
             {
-                <div class="card">
-                    <div class="imageButton">
-                        <img src="@product.PrimaryImage" alt="@product.Title">
-                        <button class="favoriteButton"><i class="fa-solid fa-heart"></i></button>
-                    </div>
+                <a asp-controller="Products" asp-action="Details" asp-route-articleNumber="@product.ArticleNumber">
+                    <div class="card">
+                        <div class="imageButton">
+                            <img src="@product.PrimaryImage" alt="@product.Title">
+                            <button class="favoriteButton"><i class="fa-solid fa-heart"></i></button>
+                        </div>
 
-                    ´<div class="productInfo">
-                        <h6>@product.Title</h6>
-                        <p>@product.Ingress</p>
-                        <p class="price">$@product.Price</p>
+                        ´<div class="productInfo">
+                            <h6>@product.Title</h6>
+                            <p>@product.Ingress</p>
+                            <p class="price">$@product.Price</p>
+                        </div>
                     </div>
-                </div>
+                   
+                </a>
             }
         </div>
     </div>
