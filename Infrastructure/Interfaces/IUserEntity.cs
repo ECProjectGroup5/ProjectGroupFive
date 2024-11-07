@@ -8,7 +8,7 @@
 /// /// </remarks>
 public interface IUserEntity
 {
-    string FirstName { get; set; }
+    string? FirstName { get; set; }
     bool IsExternalAccount { get; set; }
-    string LastName { get; set; }
+    string? LastName { get; set; }
 }
