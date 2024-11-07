@@ -7,26 +7,27 @@ namespace RikaApp.ViewModels;
 /// </summary>
 public class SignUpViewModel
 {
-	[Required]
-	[Display(Name = "User", Prompt = "Enter your user name")]
-	public string User { get; set; } = null!;
+    [Required]
+    [Display(Name = "User", Prompt = "Enter your user name")]
+    public string User { get; set; } = null!;
 
-	[Required]
-	[Display(Name = "Email Address", Prompt = "Enter your email address")]
-	[DataType(DataType.EmailAddress)]
-	public string Email { get; set; } = null!;
+    [Required]
+    [Display(Name = "Email Address", Prompt = "Enter your email address")]
+    [DataType(DataType.EmailAddress)]
+    public string Email { get; set; } = null!;
 
-	[Required]
-	[Display(Name = "Password", Prompt = "Enter your password")]
-	[DataType(DataType.Password)]
-	public string Password { get; set; } = null!;
+    [Required]
+    [Display(Name = "Password", Prompt = "Enter your password")]
+    [DataType(DataType.Password)]
+    public string Password { get; set; } = null!;
 
-	[Required]
-	[Display(Name = "Password", Prompt = "Enter your password")]
-	[DataType(DataType.Password)]
-	[Compare(nameof(Password), ErrorMessage = "Password does not match")]
-	public string ConfirmPassword { get; set; } = null!;
+    [Required]
+    [Display(Name = "Confirm Password", Prompt = "Confirm your password")]
+    [DataType(DataType.Password)]
+    [Compare(nameof(Password), ErrorMessage = "Passwords do not match.")]
+    public string ConfirmPassword { get; set; } = null!;
 
-	[Display(Name = "By creating an account you have to agree with our terms and conditions", Prompt = "Terms and conditions")]
-	public bool TermsAndConditions { get; set; }
+    [Required(ErrorMessage = "You must agree to the terms and conditions.")]
+    [Display(Name = "I agree to the terms and conditions")]
+    public bool TermsAndConditions { get; set; }
 }

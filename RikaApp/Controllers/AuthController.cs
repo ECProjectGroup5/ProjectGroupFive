@@ -16,16 +16,24 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
     [Route("/signup")]
     public IActionResult SignUp()
     {
+        Console.WriteLine("Navigated to SignUp view (GET request).");
         return View();
     }
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> SignUp(SignUpViewModel model)
     {
+        Console.WriteLine("SignUp POST request received.");
+
         if (ModelState.IsValid)
         {
+            Console.WriteLine("Model state is valid for email: " + model.Email);
+
             if (!await _context.Users.AnyAsync(x => x.Email == model.Email))
             {
+                Console.WriteLine("No existing user found with email: " + model.Email);
+
                 var userEntity = new UserEntity
                 {
                     Email = model.Email,
@@ -35,23 +43,30 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
                 var result = await _userManager.CreateAsync(userEntity, model.Password);
                 if (result.Succeeded)
                 {
+                    Console.WriteLine("User successfully created and signed in with email: " + model.Email);
                     await _signInManager.SignInAsync(userEntity, isPersistent: false);
                     return LocalRedirect("/");
                 }
                 else
                 {
+                    Console.WriteLine("Failed to create user with email: " + model.Email);
                     ViewData["StatusMessage"] = "Something went wrong. Try again later";
                 }
             }
             else
             {
+                Console.WriteLine("User with email already exists: " + model.Email);
                 ViewData["StatusMessage"] = "User with the same email already exists";
             }
         }
+        else
+        {
+            Console.WriteLine("Model state is invalid for email: " + model.Email);
+        }
 
+        Console.WriteLine("Returning to SignUp view due to validation or error.");
         return View(model);
     }
-
 
     [Route("/signin")]
     public IActionResult SignIn()
