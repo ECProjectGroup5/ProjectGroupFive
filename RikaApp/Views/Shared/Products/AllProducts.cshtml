@@ -4,7 +4,7 @@
 
 }
 
-<section id="AllProducts">
+<section id="allProducts">
     <div class="container">
         <h3 class="categoryTitle">@Model.Title</h3>
 
@@ -15,16 +15,16 @@
                     <div class="card">
                         <div class="imageButton">
                             <img src="@product.PrimaryImage" alt="@product.Title">
-                            <button class="favoriteButton"><i class="fa-solid fa-heart"></i></button>
+                            <button asp-action="" class="favoriteButton" onclick="toggleFavorite(this)"></button>
                         </div>
 
-                        ´<div class="productInfo">
-                            <h6>@product.Title</h6>
-                            <p>@product.Ingress</p>
+                        <div class="productInfo">
+                            <h3>@product.Title</h3>
+                            <p class="ingress">@product.Ingress</p>
                             <p class="price">$@product.Price</p>
                         </div>
                     </div>
-                   
+
                 </a>
             }
         </div>

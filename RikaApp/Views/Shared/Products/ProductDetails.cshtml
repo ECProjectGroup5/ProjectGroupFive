@@ -3,36 +3,79 @@
     ViewData["Title"] = Model.Product!.Title;
 }
 
-<section id="ProductDetails">
+<section id="productDetails">
     <div class="container">
 
-        <div class="productDetails">
+        <div class="product">
             <div class="productImages">
                 <img src="@Model.Product.PrimaryImage" alt="@Model.Product.Title">
-                <div class="imageThumbnails">
-                    <button class="favoriteButton"><i class="fa-solid fa-heart"></i></button>
-
-                </div>
+                <button class="favoriteButton" onclick="toggleFavorite(this)"></button>
             </div>
 
             <div class="productInfo">
-                <h3>@Model.Product.Title</h3>
-                <p>@Model.Product.Ingress</p>
+                <div class="productInfoCartButton">
+                    <div class="productTitleIngress">
+                        <h3>@Model.Product.Title</h3>
+                        <p class="productIngress">@Model.Product.Ingress</p>
+
+                        <div class="rating">
+                            <div class="star-rating">
+                                <span class="star" data-value="1">&#9733;</span>
+                                <span class="star" data-value="2">&#9733;</span>
+                                <span class="star" data-value="3">&#9733;</span>
+                                <span class="star" data-value="4">&#9733;</span>
+                                <span class="star" data-value="5">&#9733;</span>
+                            </div>
+
+                           <p class="review">(320 Review)</p>
+                        </div>
+                    </div>
+
+                    <div class="querySelectorAvaliable">
+                        <div class="quantity-selector">
+                            <button class="decrement" onclick="decreaseQuantity()">-</button>
+                            <input type="text" id="quantity" value="1" readonly />
+                            <button class="increment" onclick="increaseQuantity()">+</button>
+                        </div>
+
+                        <p class="avaliable">Avaliable in stock</p>
+                    </div>
+                </div>
 
                 <div class="productContent">
+                    <div class="sizeColor">
+                        <div class="sizeTitle">
+                            <h4>Size</h4>
+
+                            <div>
+                                <button class="size-button">S</button>
+                                <button class="size-button">M</button>
+                                <button class="size-button">L</button>
+                                <button class="size-button">XL</button>
+                                <button class="size-button">XXL</button>
+                            </div>
+                        </div>
+
+                        <div class="productColor">
+                            <span class="color-button color-white" title="Vit"></span>
+                            <span class="color-button color-black" title="Svart"></span>
+                            <span class="color-button color-green" title="Grön"></span>
+                            <span class="color-button color-orange" title="Orange"></span>
+                        </div>
+                    </div>
                     <div class="descriptionTitle">
-                        <h3>Description</h3>
-                        <p>@Model.Product.Description</p>
+                        <h4>Description</h4>
+                        <p class="description">@Model.Product.Description</p>
                     </div>
                 </div>
 
                 <div class="bottom">
-                    <div class="price">
+                    <div class="priceDetails">
                         <p class="priceTitle">Total Price</p>
-                        <p class="price">$@Model.Product.Price</p>
+                        <h4 class="price" data-price="@Model.Product.Price">$@Model.Product.Price</h4>
                     </div>
 
-                    <button class="addToCartButton">Add to cart</button>
+                    <button class="btn-black"><i class="fa-solid fa-bag-shopping"></i> Add to cart</button>
                 </div>
             </div>
         </div>

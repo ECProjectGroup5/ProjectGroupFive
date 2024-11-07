@@ -6,5 +6,13 @@
   {
     "outputFile": "wwwroot/css/scss/core/wrapper.css",
     "inputFile": "wwwroot/css/scss/core/wrapper.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/scss/sections/products/_allProducts.css",
+    "inputFile": "wwwroot/css/scss/sections/products/_allProducts.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/scss/sections/products/_productDetails.css",
+    "inputFile": "wwwroot/css/scss/sections/products/_productDetails.scss"
   }
 ]

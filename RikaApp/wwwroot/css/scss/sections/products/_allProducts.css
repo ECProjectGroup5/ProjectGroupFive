@@ -1,0 +1,95 @@
+﻿@charset "UTF-8";
+#allProducts .container {
+  padding: 25px 0 0 0;
+}
+#allProducts .container .categoryTitle {
+  font-family: "Aboreto", system-ui;
+  font-weight: 100;
+  font-style: normal;
+  margin-bottom: 2rem;
+}
+#allProducts .container .productCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (min-width: 992px) {
+  #allProducts .container .productCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+}
+#allProducts .container .productCard a {
+  text-decoration: none;
+}
+#allProducts .container .productCard a .card {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  max-width: 150px;
+  transition: all 0.3s ease;
+}
+@media (min-width: 768px) {
+  #allProducts .container .productCard a .card {
+    max-width: 350px;
+  }
+}
+#allProducts .container .productCard a .card .imageButton {
+  position: relative;
+  overflow: hidden;
+  height: 170px;
+}
+#allProducts .container .productCard a .card .imageButton img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+  border-radius: 20px;
+}
+#allProducts .container .productCard a .card .imageButton img:hover img {
+  transform: scale(1.1);
+}
+#allProducts .container .productCard a .card .imageButton .favoriteButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  color: lightgray;
+  background-color: black;
+}
+#allProducts .container .productCard a .card .imageButton .favoriteButton::before {
+  content: "♡";
+  color: white;
+  font-size: 24px;
+}
+#allProducts .container .productCard a .card .imageButton .favoriteButton.active::before {
+  content: "♥";
+  color: white;
+}
+#allProducts .container .productCard a .card .productInfo {
+  margin-top: 20px;
+}
+#allProducts .container .productCard a .card .productInfo h3 {
+  font-weight: 700;
+  margin-bottom: 0;
+}
+#allProducts .container .productCard a .card .productInfo .ingress {
+  margin-bottom: 10px;
+}
+#allProducts .container .productCard a .card .productInfo .price {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #0B0F19;
+}

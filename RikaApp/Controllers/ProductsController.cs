@@ -53,14 +53,13 @@ public class ProductsController(HttpClient client) : Controller
                     viewModel.Product = unpackedProduct;
                     return View(viewModel);
                 }
-            }
-           
+            } 
         }
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
         }
+
         return View();
-      
     }
 }
