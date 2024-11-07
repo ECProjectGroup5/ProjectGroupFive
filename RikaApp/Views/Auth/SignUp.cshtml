@@ -1,0 +1,22 @@
+﻿@using RikaApp.ViewModels
+@model SignUpViewModel
+
+@{
+	ViewData["Title"] = "Sign Up";
+}
+
+<section id="signup">
+	
+	<div class="container">
+
+	@if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+	{
+		<div class="alert alert-danger">
+			@ViewData["StatusMessage"]
+		</div>
+	}
+
+	</div>
+</section>
+
+@* @await Html.PartialAsync("_ValidationScriptPartial") *@

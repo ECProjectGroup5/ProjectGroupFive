@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 
-using System.Diagnostics;
-
 namespace RikaApp.Controllers
 {
     public class HomeController : Controller
