@@ -19,41 +19,41 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
         return View();
     }
 
-	[HttpPost]
-	public async Task<IActionResult> SignUp(SignUpViewModel model)
-	{
+    [HttpPost]
+    public async Task<IActionResult> SignUp(SignUpViewModel model)
+    {
         if (ModelState.IsValid)
         {
-          if (!await _context.Users.AnyAsync(x => x.Email == model.Email))
-          {
+            if (!await _context.Users.AnyAsync(x => x.Email == model.Email))
+            {
                 var userEntity = new UserEntity
                 {
                     Email = model.Email,
                     UserName = model.Email
                 };
 
-                if ((await _userManager.CreateAsync(userEntity, model.Password)).Succeeded)
+                var result = await _userManager.CreateAsync(userEntity, model.Password);
+                if (result.Succeeded)
                 {
-                    if ((await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false)).Succeeded)
-                        return LocalRedirect("/");
-                    else LocalRedirect("/signin");
-				}
-				else
-				{
-					ViewData["StatusMessage"] = "Something went wrong. Try again later";
-				}
-			}
-          else
-          { 
-		    ViewData["StatusMessage"] = "User with the same email already exists";
-		  }
-          
+                    await _signInManager.SignInAsync(userEntity, isPersistent: false);
+                    return LocalRedirect("/");
+                }
+                else
+                {
+                    ViewData["StatusMessage"] = "Something went wrong. Try again later";
+                }
+            }
+            else
+            {
+                ViewData["StatusMessage"] = "User with the same email already exists";
+            }
         }
 
-		return View(model);
-	}
+        return View(model);
+    }
 
-	[Route("/signin")]
+
+    [Route("/signin")]
     public IActionResult SignIn()
     {
         return View();

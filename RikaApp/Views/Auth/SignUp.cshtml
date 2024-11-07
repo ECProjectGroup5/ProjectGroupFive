@@ -1,22 +1,52 @@
-﻿@using RikaApp.ViewModels
-@model SignUpViewModel
+﻿@model SignUpViewModel
 
 @{
-	ViewData["Title"] = "Sign Up";
+    ViewData["Title"] = "Sign Up";
 }
 
 <section id="signup">
-	
-	<div class="container">
+    <div class="container">
+        <img src="/images/logo.png" alt="Silicon Logo" />
+        @if (!string.IsNullOrEmpty(ViewData["StatusMessage"]?.ToString()))
+        {
+            <div class="alert alert-danger">
+                @ViewData["StatusMessage"]
+            </div>
+        }
 
-	@if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
-	{
-		<div class="alert alert-danger">
-			@ViewData["StatusMessage"]
-		</div>
-	}
-
-	</div>
+        <form method="post" asp-action="SignUp" asp-controller="Auth" novalidate>
+            <h2>Sign Up</h2>
+            <p>Create a new account</p>
+            <div class="form-content">
+                <div id="form-user" class="input-group">
+                    <label asp-for="User"></label>
+                    <input asp-for="User" />
+                    <span asp-validation-for="User"></span>
+                </div>
+                <div id="form-email" class="input-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" />
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <div id="form-password" class="input-group">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" type="password" />
+                    <span asp-validation-for="Password"></span>
+                </div>
+                <div id="form-confirmpassword" class="input-group">
+                    <label asp-for="ConfirmPassword"></label>
+                    <input asp-for="ConfirmPassword" type="password" />
+                    <span asp-validation-for="ConfirmPassword"></span>
+                </div>
+                <div id="form-checkbox" class="checkbox-group">
+                    <label asp-for="TermsAndConditions"></label>
+                    <input asp-for="TermsAndConditions" />
+                    <span asp-validation-for="TermsAndConditions"></span>
+                </div>
+                <div id="form-button">
+                    <button type="submit" class="btn btn-black">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </section>
-
-@* @await Html.PartialAsync("_ValidationScriptPartial") *@
