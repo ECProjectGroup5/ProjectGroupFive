@@ -21,6 +21,7 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
     }
 
     [HttpPost]
+    [Route("/signup")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> SignUp(SignUpViewModel model)
     {
