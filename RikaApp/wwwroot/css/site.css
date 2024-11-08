@@ -73,6 +73,10 @@ html, body {
   color: black;
 }
 
+.favoriteButton.active:hover {
+  transform: scale(1.1);
+}
+
 .quantity-selector {
   display: inline-flex;
   align-items: center;
@@ -210,6 +214,9 @@ html, body {
 #allProducts .container .productCard a .card .imageButton .favoriteButton.active::before {
   content: "♥";
   color: white;
+}
+#allProducts .container .productCard a .card .imageButton .favoriteButton.active:hover {
+  transform: scale(1.1);
 }
 #allProducts .container .productCard a .card .productInfo {
   margin-top: 20px;
@@ -404,5 +411,11 @@ html, body {
 }
 
 .star.selected {
-  color: #FFD700;
+  color: gold;
+  transition: color 0.3s ease;
+}
+
+.price-update {
+  transition: transform 0.15s ease;
+  transform: scale(1.1);
 }

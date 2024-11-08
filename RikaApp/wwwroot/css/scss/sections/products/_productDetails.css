@@ -176,5 +176,11 @@
 }
 
 .star.selected {
-  color: #FFD700;
+  color: gold;
+  transition: color 0.3s ease;
+}
+
+.price-update {
+  transition: transform 0.15s ease;
+  transform: scale(1.1);
 }

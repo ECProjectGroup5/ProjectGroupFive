@@ -78,6 +78,9 @@
   content: "♥";
   color: white;
 }
+#allProducts .container .productCard a .card .imageButton .favoriteButton.active:hover {
+  transform: scale(1.1);
+}
 #allProducts .container .productCard a .card .productInfo {
   margin-top: 20px;
 }

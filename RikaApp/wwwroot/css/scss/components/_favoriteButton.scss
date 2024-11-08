@@ -23,3 +23,7 @@
     content: "\2665";
     color: black;
 }
+
+.favoriteButton.active:hover {
+    transform: scale(1.1);
+}
