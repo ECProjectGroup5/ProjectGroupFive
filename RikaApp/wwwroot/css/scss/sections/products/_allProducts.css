@@ -2,6 +2,43 @@
 #allProducts .container {
   padding: 25px 0 0 0;
 }
+#allProducts .container .headerButtons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0 40px 0;
+}
+@media (min-width: 992px) {
+  #allProducts .container .headerButtons {
+    display: none;
+  }
+}
+#allProducts .container .headerButtons .search-button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#allProducts .container .headerButtons .search-field {
+  position: absolute;
+  right: 170px;
+  display: none;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+  outline: 1px solid #ccc;
+}
+#allProducts .container .headerButtons .search-field.active {
+  display: inline-block;
+  width: 200px;
+}
 #allProducts .container .categoryTitle {
   font-family: "Aboreto", system-ui;
   font-weight: 100;

@@ -10,6 +10,14 @@
             <div class="productImages">
                 <img src="@Model.Product.PrimaryImage" alt="@Model.Product.Title">
                 <button class="favoriteButton" onclick="toggleFavorite(this)"></button>
+
+                <button class="backButton" onclick="goBack()">
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                </button>
+
+                <button class="shoppingCartButton">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </button>
             </div>
 
             <div class="productInfo">

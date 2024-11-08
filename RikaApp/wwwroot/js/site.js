@@ -66,3 +66,18 @@ function updateStarColors(rating) {
 function toggleFavorite(button) {
     button.classList.toggle("active");
 }
+
+// Funktion för att gå tillbaka till föregående sida
+function goBack() {
+    window.history.back();
+}
+
+// Sökfunktion
+function toggleSearch() {
+    const searchField = document.getElementById("search-field");
+    searchField.classList.toggle("active");
+
+    if (searchField.classList.contains("active")) {
+        searchField.focus();
+    }
+}
