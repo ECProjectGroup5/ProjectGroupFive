@@ -24,6 +24,7 @@
         <form method="post" asp-action="SignUp" asp-controller="Auth" >
             <h2>Sign Up</h2>
             <p>Create a new account</p>
+            <p>Already registered? <a asp-action="SignIn" asp-controller="Auth">Sign in here</a></p>
             <div class="form-content">
                 <div id="form-user" class="input-group">
                     <label asp-for="User"></label>

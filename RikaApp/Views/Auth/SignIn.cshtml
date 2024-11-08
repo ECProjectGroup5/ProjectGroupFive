@@ -1,0 +1,52 @@
+﻿@model SignInViewModel
+
+@{
+    ViewData["Title"] = "Sign In";
+}
+<section class="signin">
+    <div class="container">
+        <img src="/images/logo.png" alt="Rika Logo" />
+        @if (!string.IsNullOrEmpty(TempData["StatusMessage"]?.ToString()))
+        {
+            <div class="error-message">
+                @TempData["StatusMessage"]
+            </div>
+        }
+
+        <form method="post" asp-action="SignIn" asp-controller="Auth" novalidate>
+            <h2>Sign In</h2>
+            <p>Not registered yet? <a asp-action="SignUp" asp-controller="Auth">Sign Up here!</a></p>
+            <div class="form-content">
+
+                <div id="form-email" class="input-group">
+                    <label asp-for="Email">Email</label>
+                    <input id="email" required type="email" asp-for="Email" />
+                    <span id="email-error" asp-validation-for="Email"></span>
+                </div>
+
+
+                <div id="form-password" class="input-group">
+                    <label asp-for="Password">Password</label>
+                    <input id="password" required type="password" asp-for="Password" />
+                    <span id="password-error" asp-validation-for="Password"></span>
+                </div>
+
+                <div id="form-checkbox" class="checkbox-group">
+
+                        <input id="rememberMe" type="checkbox" asp-for="RememberMe" />
+                        <label asp-for="RememberMe"></label>
+                  
+                </div>
+
+                <div id="form-button">
+                    <button type="submit" class="btn btn-theme"><i class="fa-regular fa-arrow-left-to-bracket"></i>Sign In</button>
+                </div>
+
+                <a id="form-forgot-password" asp-controller="" asp-action="Forgot">Forgot your password?</a>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+@await Html.PartialAsync("_ValidationScriptPartial")
