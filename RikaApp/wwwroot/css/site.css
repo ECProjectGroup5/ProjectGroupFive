@@ -41,7 +41,7 @@
 
 .error-message, .alert-danger {
   color: #e74c3c;
-  background-color: #fdf3f2;
+  background-color: #e74c3c;
   padding: 0.5rem;
   border-radius: 4px;
   margin-bottom: 1rem;
@@ -97,13 +97,13 @@ form .form-content .btn.btn-theme {
   background-color: #043454;
 }
 form .form-content .btn.btn-theme:hover {
-  background-color: #021623;
+  background-color: #043454;
 }
 form .form-content .btn.btn-black {
   background-color: #333;
 }
 form .form-content .btn.btn-black:hover {
-  background-color: #1a1a1a;
+  background-color: #043454;
 }
 form .form-content a {
   font-size: 0.9rem;
@@ -116,4 +116,9 @@ form .form-content a:hover {
 
 #signup h2 {
   margin-top: 0.5rem;
+}
+
+.field-validation-error {
+  color: #f00;
+  text-align: left;
 }

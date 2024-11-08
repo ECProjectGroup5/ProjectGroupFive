@@ -1,12 +1,6 @@
-﻿// Base Styling
-$font-stack: Arial, sans-serif;
-$primary-color: #043454;
-$error-color: #e74c3c;
-$input-border-color: #ddd;
-$button-bg-color: $primary-color;
-$button-hover-color: darken($primary-color, 10%);
+﻿
 
-// General Container Styles
+
 .form-section {
     display: flex;
     justify-content: center;
@@ -42,15 +36,15 @@ $button-hover-color: darken($primary-color, 10%);
 
 // Error Message
 .error-message, .alert-danger {
-    color: $error-color;
-    background-color: lighten($error-color, 40%);
+    color: #e74c3c;
+    background-color: #e74c3c;
     padding: 0.5rem;
     border-radius: 4px;
     margin-bottom: 1rem;
     font-size: 0.9rem;
 }
 
-// Form Styling
+
 form {
     .form-content {
         margin-top: 1.5rem;
@@ -69,17 +63,17 @@ form {
 
             input {
                 padding: 0.5rem;
-                border: 1px solid $input-border-color;
+                border: 1px solid #ddd;
                 border-radius: 4px;
                 font-size: 1rem;
 
                 &:focus {
-                    border-color: $primary-color;
+                    border-color: #043454;
                     outline: none;
                 }
             }
         }
-        // Checkbox group
+
         .checkbox-group {
             display: flex;
             align-items: center;
@@ -94,7 +88,7 @@ form {
                 color: #333;
             }
         }
-        // Submit Button
+
         .btn {
             padding: 0.6rem 1.5rem;
             font-size: 1rem;
@@ -105,10 +99,10 @@ form {
             transition: background-color 0.3s ease;
 
             &.btn-theme {
-                background-color: $button-bg-color;
+                background-color: #043454;
 
                 &:hover {
-                    background-color: $button-hover-color;
+                    background-color: #043454;
                 }
             }
 
@@ -116,14 +110,14 @@ form {
                 background-color: #333;
 
                 &:hover {
-                    background-color: darken(#333, 10%);
+                    background-color: #043454;
                 }
             }
         }
 
         a {
             font-size: 0.9rem;
-            color: $primary-color;
+            color: #043454;
             text-decoration: none;
 
             &:hover {
@@ -133,7 +127,7 @@ form {
     }
 }
 
-// Adjusted Styles for Sign-in and Sign-up Sections
+
 .signin {
     @extend .form-section;
 }
@@ -144,4 +138,10 @@ form {
     h2 {
         margin-top: 0.5rem;
     }
+}
+
+
+.field-validation-error {
+    color: #f00;
+    text-align: left;
 }
