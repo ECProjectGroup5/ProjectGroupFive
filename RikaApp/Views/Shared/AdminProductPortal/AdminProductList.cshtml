@@ -1,0 +1,33 @@
+﻿@model ProductsViewModel;
+@{
+    ViewData["Title"] = Model.Title;
+
+}
+
+<section id="admin-all-products">
+    <div class="container">
+        <h3 class="categoryTitle">@Model.Title</h3>
+
+        <div class="admin-product-card">
+            @foreach (var product in Model.Products)
+            {
+                <div class="admin-list">
+                <a asp-controller="AdminSingleProduct" asp-action="Details" asp-route-articleNumber="@product.ArticleNumber">
+                    <div class="admin-card">
+                        <div class="admin-image">
+                            <img class="" src="@product.PrimaryImage" alt="@product.Title">
+                           
+                        </div>
+
+                        <div class="admin-product-info">
+                            <h3>@product.Title</h3>
+                          
+                            <p class="price">$@product.Price</p>
+                        </div>
+                    </div>
+                </a>
+                </div>
+            }
+        </div>
+    </div>
+</section>

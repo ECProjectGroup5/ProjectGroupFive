@@ -6,5 +6,37 @@
   {
     "outputFile": "wwwroot/css/scss/core/wrapper.css",
     "inputFile": "wwwroot/css/scss/core/wrapper.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/scss/sections/_productDetails.css",
+    "inputFile": "wwwroot/css/scss/sections/_productDetails.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/scss/components/_buttons.css",
+    "inputFile": "wwwroot/css/scss/components/_buttons.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/scss/core/_base.css",
+    "inputFile": "wwwroot/css/scss/core/_base.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/scss/components/_favoriteButton.css",
+    "inputFile": "wwwroot/css/scss/components/_favoriteButton.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/scss/components/_quantitySelector.css",
+    "inputFile": "wwwroot/css/scss/components/_quantitySelector.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/scss/core/_media.css",
+    "inputFile": "wwwroot/css/scss/core/_media.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/scss/core/_typography.css",
+    "inputFile": "wwwroot/css/scss/core/_typography.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/scss/sections/products/_allProducts.css",
+    "inputFile": "wwwroot/css/scss/sections/products/_allProducts.scss"
   }
 ]

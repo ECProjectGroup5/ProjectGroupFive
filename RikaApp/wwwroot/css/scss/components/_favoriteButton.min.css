@@ -1,0 +1,1 @@
+﻿@charset "UTF-8";.favoriteButton{width:30px;height:30px;border:1px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s ease;font-size:1rem;color:#d3d3d3;background-color:#fff;}.favoriteButton::before{content:"♡";color:#000;font-size:24px;}.favoriteButton.active::before{content:"♥";color:#000;}
