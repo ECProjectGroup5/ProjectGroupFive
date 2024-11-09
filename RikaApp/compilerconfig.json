@@ -38,5 +38,9 @@
   {
     "outputFile": "wwwroot/css/scss/sections/products/_allProducts.css",
     "inputFile": "wwwroot/css/scss/sections/products/_allProducts.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/scss/sections/adminproductportal/_adminProductList.css",
+    "inputFile": "wwwroot/css/scss/sections/adminproductportal/_adminProductList.scss"
   }
 ]
