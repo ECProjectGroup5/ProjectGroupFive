@@ -43,68 +43,69 @@ public class AdminSingleProductController(HttpClient client) : Controller
         return View();
     }
 
+    
 
     [HttpPost]
-public async Task<IActionResult> UpdateProduct(ProductsViewModel viewModel)
-{
-    if (ModelState.IsValid)
+    public async Task<IActionResult> UpdateProduct(ProductsViewModel viewModel)
     {
-        try
+        if (ModelState.IsValid)
         {
-            if (viewModel.Product != null)
+            try
             {
+                if (viewModel.Product != null)
+                {
                
-                var body = JsonConvert.SerializeObject(viewModel.Product);
-                var content = new StringContent(body, Encoding.UTF8, "application/json");
+                    var body = JsonConvert.SerializeObject(viewModel.Product);
+                    var content = new StringContent(body, Encoding.UTF8, "application/json");
 
                 
-                var response = await _client.PutAsync("http://localhost:7189/api/UpdateAPI", content);
+                    var response = await _client.PutAsync("http://localhost:7189/api/UpdateAPI", content);
 
-                if (response != null && response.IsSuccessStatusCode)
-                {
-                    
-                    var stringResponse = await response.Content.ReadAsStringAsync();
-                    var updatedProduct = JsonConvert.DeserializeObject<ProductModel>(stringResponse);
-
-                    if (updatedProduct != null)
+                    if (response != null && response.IsSuccessStatusCode)
                     {
+                    
+                        var stringResponse = await response.Content.ReadAsStringAsync();
+                        var updatedProduct = JsonConvert.DeserializeObject<ProductModel>(stringResponse);
+
+                        if (updatedProduct != null)
+                        {
                        
-                        viewModel.Product = updatedProduct;
+                            viewModel.Product = updatedProduct;
 
                        
-                        return View("Details", viewModel);
+                            return View("Details", viewModel);
+                        }
+                        else
+                        {
+                            ModelState.AddModelError(string.Empty, "Failed to deserialize updated product details. Please try again.");
+                        }
                     }
                     else
                     {
-                        ModelState.AddModelError(string.Empty, "Failed to deserialize updated product details. Please try again.");
+                        ModelState.AddModelError(string.Empty, "Failed to update the product. Please try again.");
                     }
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Failed to update the product. Please try again.");
+                    ModelState.AddModelError(string.Empty, "Product information is missing. Please try again.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                ModelState.AddModelError(string.Empty, "Product information is missing. Please try again.");
+            
+                Console.WriteLine(ex.Message);
+                ModelState.AddModelError(string.Empty, "An unexpected error occurred. Please try again.");
             }
         }
-        catch (Exception ex)
-        {
-            
-            Console.WriteLine(ex.Message);
-            ModelState.AddModelError(string.Empty, "An unexpected error occurred. Please try again.");
-        }
-    }
 
    
-    if (viewModel.Product == null)
-    {
-        viewModel.Product = new ProductModel(); 
-    }
+        if (viewModel.Product == null)
+        {
+            viewModel.Product = new ProductModel(); 
+        }
 
-    return View("Details", viewModel);
-}
+        return View("Details", viewModel);
+    }
 
     [HttpPost]
 
