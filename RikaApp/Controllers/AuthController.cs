@@ -88,22 +88,38 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> SignIn(SignInViewModel viewModel)
     {
-        //försök logga in om giltig
+
         if (ModelState.IsValid)
         {
             var user = await _userManager.FindByEmailAsync(viewModel.Email);
+
             if (user != null)
-            {
-                var result = await _signInManager.PasswordSignInAsync(viewModel.Email, viewModel.Password, viewModel.RememberMe, false);
+            {   //try sign in
+                Console.WriteLine("Trying to sign in with UserName: " + user.UserName + " and Email: " + user.Email);
+
+                var result = await _signInManager.PasswordSignInAsync(user.UserName!, viewModel.Password, viewModel.RememberMe, false);
+
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Profile", "Account");
                 }
+                else
+                {
+                    TempData["StatusMessage"] = "Incorrect credentials, try again.";
+                }
 
             }
+            else
+            {
+                TempData["StatusMessage"] = "User does not exist.";
+            }
+
+        }
+        else
+        {
+            TempData["StatusMessage"] = "Invalid input.";
         }
 
-        ViewData["StatusMessage"] = "Incorrect credentials, try again.";
         return View(viewModel);
     }
 

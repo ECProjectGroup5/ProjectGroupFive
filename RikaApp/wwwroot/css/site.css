@@ -41,7 +41,7 @@
 
 .error-message, .alert-danger {
   color: #e74c3c;
-  background-color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.168627451);
   padding: 0.5rem;
   border-radius: 4px;
   margin-bottom: 1rem;

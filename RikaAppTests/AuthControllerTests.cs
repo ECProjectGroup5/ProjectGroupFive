@@ -41,12 +41,14 @@ public class AuthControllerTests
             RememberMe = false
         };
 
+        _controller.ModelState.AddModelError("Email", "Required");
+
         // Act
         var result = await _controller.SignIn(viewModel) as ViewResult;
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal("Incorrect credentials, try again.", result.ViewData["StatusMessage"]);
+        Assert.Equal("Invalid input.", result.ViewData["StatusMessage"]);
     }
     [Fact]
     public async Task SignIn_ShouldReturnValidationError_IfPasswordIsEmpty()
@@ -59,12 +61,13 @@ public class AuthControllerTests
             RememberMe = false
         };
 
+        _controller.ModelState.AddModelError("Password", "Required");
         // Act
         var result = await _controller.SignIn(viewModel) as ViewResult;
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal("Incorrect credentials, try again.", result.ViewData["StatusMessage"]);
+        Assert.Equal("Invalid input.", result.ViewData["StatusMessage"]);
     }
     [Fact]
     public async Task SignIn_ShouldRedirectToAccountIndex_OnSuccessfulLogin()
@@ -79,7 +82,7 @@ public class AuthControllerTests
 
         var user = new UserEntity { Email = viewModel.Email };
         _userManagerMock.Setup(x => x.FindByEmailAsync(viewModel.Email)).ReturnsAsync(user);
-        _signInManagerMock.Setup(x => x.PasswordSignInAsync(viewModel.Email, viewModel.Password, viewModel.RememberMe, false))
+        _signInManagerMock.Setup(x => x.PasswordSignInAsync(user.UserName!, viewModel.Password, viewModel.RememberMe, false))
             .ReturnsAsync(Microsoft.AspNetCore.Identity.SignInResult.Success);
 
         // Act
