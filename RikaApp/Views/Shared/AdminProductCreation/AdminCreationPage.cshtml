@@ -1,0 +1,78 @@
+﻿@model ProductsViewModel
+@{
+    ViewData["Title"] = Model?.Creation?.Title ?? "Create New Product";
+}
+
+<section id="admin-create">
+    <div class="container">
+        <h3>@(Model?.Creation?.Title ?? "Create New Product")</h3>
+
+        <form asp-controller="AdminProductCreation" asp-action="CreateProduct" method="post">
+            
+
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="Creation.Title" class="form-control" value="@Model.Creation.Title" required />
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" id="price" name="Creation.Price" class="form-control" value="@Model.Creation.Price" step="0.01" required />
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="Creation.Description" class="form-control">@Model.Creation.Description</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="ingress">Ingress</label>
+                <textarea id="ingress" name="Creation.Ingress" class="form-control">@Model.Creation.Ingress</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="manufacturer">Manufacturer</label>
+                <input type="text" id="manufacturer" name="Creation.Manufacturer" class="form-control" value="@Model.Creation.Manufacturer" />
+            </div>
+
+            <div class="form-group">
+                <label for="primaryImage">Primary Image URL</label>
+                <input type="text" id="primaryImage" name="Creation.PrimaryImage" class="form-control" value="@Model.Creation.PrimaryImage" />
+            </div>
+
+            <div class="form-group">
+                <label for="sizeNames">Sizes (Coming function)</label>
+                <div id="sizeList">
+                    @foreach (var size in Model.Creation.SizeNames)
+                    {
+                        <div class="form-check">
+                            <input type="checkbox" id="size_@size" name="Creation.SizeNames" value="@size" class="form-check-input" />
+                            <label class="form-check-label" for="size_@size">@size</label>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="colorNames">Colors (Coming function)</label>
+                <div id="colorList">
+                    @foreach (var color in Model.Creation.ColorNames)
+                    {
+                        <div class="form-check">
+                            <input type="checkbox" id="color_@color" name="Creation.ColorNames" value="@color" class="form-check-input" />
+                            <label class="form-check-label" for="color_@color">@color</label>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="stock">Stock(Coming function)</label>
+                <input type="number" id="stock" name="Creation.Stock" class="form-control" value="@Model.Creation.Stock" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create Product</button>
+        </form>
+    </div>
+</section>
+

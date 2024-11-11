@@ -1,0 +1,32 @@
+﻿@model ProductsViewModel;
+@{
+    ViewData["Title"] = Model.Title;
+
+}
+
+<section id="allProducts">
+    <div class="container">
+        <h3 class="categoryTitle">@Model.Title</h3>
+
+        <div class="productCard">
+            @foreach (var product in Model.Products)
+            {
+                <a asp-controller="Products" asp-action="Details" asp-route-articleNumber="@product.ArticleNumber">
+                    <div class="card">
+                        <div class="imageButton">
+                            <img src="@product.PrimaryImage" alt="@product.Title">
+                            <button asp-action="" class="favoriteButton" onclick="toggleFavorite(this)"></button>
+                        </div>
+
+                        <div class="productInfo">
+                            <h3>@product.Title</h3>
+                            <p class="ingress">@product.Ingress</p>
+                            <p class="price">$@product.Price</p>
+                        </div>
+                    </div>
+
+                </a>
+            }
+        </div>
+    </div>
+</section>
