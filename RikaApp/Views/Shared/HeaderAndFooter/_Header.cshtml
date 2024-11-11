@@ -1,1 +1,22 @@
-﻿
+﻿<header id="header">
+    <div class="desktopHeader">
+        <div class="container">
+            <nav class="menu">
+                <a class="homeButtonHeader" asp-controller="Home" asp-action="Index">
+                    <img class="logo-home" src="~/images/logo.svg" />
+                </a>
+
+                <a class="menuLinks" asp-controller="Products" asp-action="Index">Products</a>
+                <a class="menuLinks" asp-controller="Profile" asp-action="Index"><i class="fa-solid fa-user"></i> My profile</a>
+                <a class="menuLinks" asp-controller="Orders" asp-action="Index"><i class="fa-solid fa-bag-shopping"></i>My orders</a>
+                <a class="menuLinks" asp-controller="MyCart" asp-action="Index"><i class="fa-solid fa-cart-shopping"></i> Shoppingcart</a>
+
+                <button class="search-button" onclick="toggleSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+
+                <input type="text" id="search-field" class="search-field" placeholder="Sök..." />
+            </nav>
+        </div>
+    </div>
+</header>

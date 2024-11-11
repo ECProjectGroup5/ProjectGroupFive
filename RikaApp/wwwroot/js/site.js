@@ -1,4 +1,8 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function toggleSearch() {
+    const searchField = document.getElementById("search-field");
+    searchField.classList.toggle("active");
 
-// Write your JavaScript code.
+    if (searchField.classList.contains("active")) {
+        searchField.focus();
+    }
+}
