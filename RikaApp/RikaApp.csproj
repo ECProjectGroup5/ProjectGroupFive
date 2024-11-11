@@ -16,8 +16,8 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="wwwroot\css\scss\components\" />
-    <Folder Include="wwwroot\css\scss\sections\" />
+	  <Folder Include="wwwroot\css\scss\sections\adminProductCreation\" />
+	<Folder Include="wwwroot\css\scss\sections\adminSingleProduct\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +30,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>
