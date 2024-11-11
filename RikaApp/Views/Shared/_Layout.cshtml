@@ -14,19 +14,14 @@
 </head>
 <body>
     <div class="wrapper">
-        
-        <header>
-
-        </header>
+        @await Html.PartialAsync("~/Views/Shared/HeaderAndFooter/_Header.cshtml")
 
         <main>
             @RenderBody()
 
         </main>
         
-        <footer>
-
-        </footer>
+        @await Html.PartialAsync("~/Views/Shared/HeaderAndFooter/_Footer.cshtml")
 
     </div>
 
