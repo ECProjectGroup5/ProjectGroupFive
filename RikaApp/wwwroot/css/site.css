@@ -144,6 +144,46 @@ html, body {
   color: black;
 }
 
+.backButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: #F3F6FF;
+  color: black;
+}
+
+.shoppingCartButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.shoppingCartButton:hover {
+  background-color: #333;
+  color: white;
+}
+
 .form-section, #signup, .signin {
   display: flex;
   justify-content: center;
@@ -451,6 +491,7 @@ form .form-content a:hover {
   font-weight: 100;
   font-style: normal;
   margin-bottom: 2rem;
+  padding-top: 25px;
 }
 #allProducts .container .productCard {
   display: grid;
