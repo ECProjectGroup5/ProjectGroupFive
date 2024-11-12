@@ -6,6 +6,17 @@
 
 <section id="allProducts">
     <div class="container">
+        <div class="headerButtons">
+            <button class="backButton" onclick="goBack()">
+                <i class="fa-solid fa-arrow-left-long"></i>
+            </button>
+
+            <button class="search-button" onclick="toggleSearch()">
+                <i class="fas fa-search"></i>
+            </button>
+
+            <input type="text" id="search-field" class="search-field" placeholder="Sök..." />
+        </div>
         <h3 class="categoryTitle">@Model.Title</h3>
 
         <div class="productCard">

@@ -132,8 +132,85 @@ html, body {
   color: black;
 }
 
+.backButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: #F3F6FF;
+  color: black;
+}
+
+.shoppingCartButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.shoppingCartButton:hover {
+  background-color: #333;
+  color: white;
+}
+
 #allProducts .container {
   padding: 25px 0 0 0;
+}
+#allProducts .container .headerButtons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0 40px 0;
+}
+@media (min-width: 992px) {
+  #allProducts .container .headerButtons {
+    display: none;
+  }
+}
+#allProducts .container .headerButtons .search-button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#allProducts .container .headerButtons .search-field {
+  position: absolute;
+  right: 170px;
+  display: none;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+  outline: 1px solid #ccc;
+}
+#allProducts .container .headerButtons .search-field.active {
+  display: inline-block;
+  width: 200px;
 }
 #allProducts .container .categoryTitle {
   font-family: "Aboreto", system-ui;
@@ -241,6 +318,26 @@ html, body {
 @media (min-width: 992px) {
   #productDetails .container .product .productImages img {
     max-height: 800px;
+  }
+}
+#productDetails .container .product .productImages .backButton {
+  position: absolute;
+  left: 40px;
+  top: 50px;
+}
+@media (min-width: 992px) {
+  #productDetails .container .product .productImages .backButton {
+    display: none;
+  }
+}
+#productDetails .container .product .productImages .shoppingCartButton {
+  position: absolute;
+  right: 40px;
+  top: 50px;
+}
+@media (min-width: 992px) {
+  #productDetails .container .product .productImages .shoppingCartButton {
+    display: none;
   }
 }
 #productDetails .container .product .productImages .favoriteButton {

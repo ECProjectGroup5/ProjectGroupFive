@@ -15,6 +15,26 @@
     max-height: 800px;
   }
 }
+#productDetails .container .product .productImages .backButton {
+  position: absolute;
+  left: 40px;
+  top: 50px;
+}
+@media (min-width: 992px) {
+  #productDetails .container .product .productImages .backButton {
+    display: none;
+  }
+}
+#productDetails .container .product .productImages .shoppingCartButton {
+  position: absolute;
+  right: 40px;
+  top: 50px;
+}
+@media (min-width: 992px) {
+  #productDetails .container .product .productImages .shoppingCartButton {
+    display: none;
+  }
+}
 #productDetails .container .product .productImages .favoriteButton {
   position: absolute;
   z-index: 0;
