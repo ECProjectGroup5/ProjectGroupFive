@@ -16,12 +16,26 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+
     <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\css\scss\components\" />
+
+    <Folder Include="wwwroot\css\scss\sections\adminProductCreation\" />
+    <Folder Include="wwwroot\css\scss\sections\adminSingleProduct\" />
+
   </ItemGroup>
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>
