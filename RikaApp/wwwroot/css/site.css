@@ -446,6 +446,9 @@ form .form-content a:hover {
   width: 200px;
 }
 
+#allProducts {
+  padding: 7rem 0;
+}
 #allProducts .container {
   padding: 25px 0 0 0;
 }
@@ -579,6 +582,9 @@ form .form-content a:hover {
   color: #0B0F19;
 }
 
+#productDetails {
+  padding: 6rem 0;
+}
 #productDetails .container {
   position: relative;
 }
@@ -599,11 +605,6 @@ form .form-content a:hover {
   position: absolute;
   left: 40px;
   top: 50px;
-}
-@media (min-width: 992px) {
-  #productDetails .container .product .productImages .backButton {
-    display: none;
-  }
 }
 #productDetails .container .product .productImages .shoppingCartButton {
   position: absolute;

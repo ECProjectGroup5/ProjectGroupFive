@@ -1,4 +1,7 @@
 ﻿@charset "UTF-8";
+#allProducts {
+  padding: 7rem 0;
+}
 #allProducts .container {
   padding: 25px 0 0 0;
 }
