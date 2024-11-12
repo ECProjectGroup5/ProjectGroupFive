@@ -4,12 +4,17 @@ namespace RikaApp.ViewModels;
 
 public class SignInViewModel
 {
-    [Required]
+    [Required(ErrorMessage = "A valid email is required")]
     [Display(Name = "Email Address", Prompt = "Enter your email address")]
     [DataType(DataType.EmailAddress)]
     public string Email { get; set; } = null!;
 
-    [Required]
+    //[Required(ErrorMessage = "A username is required")]
+    //[Display(Name = "Email Address", Prompt = "Enter your username")]
+    //[DataType(DataType.Text)]
+    //public string UserName { get; set; } = null!;
+
+    [Required(ErrorMessage = "Password is required")]
     [Display(Name = "Password", Prompt = "Enter your password")]
     [DataType(DataType.Password)]
     public string Password { get; set; } = null!;
