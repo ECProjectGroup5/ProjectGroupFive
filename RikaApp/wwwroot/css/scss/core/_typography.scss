@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+$font-manrope: 'Manrope', sans-serif;
+
+@mixin standard-text {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: $font-manrope;
+}
+
+@mixin standard-heading {
+    @include standard-text();
+    font-weight: 800;
+    color: #0B0F19;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @include standard-heading;
+}
+
+p {
+    @include standard-text;
+}
