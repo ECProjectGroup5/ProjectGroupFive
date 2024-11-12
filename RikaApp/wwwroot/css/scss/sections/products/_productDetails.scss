@@ -20,6 +20,26 @@
                     }
                 }
 
+                .backButton {
+                    position: absolute;
+                    left: 40px;
+                    top: 50px;
+
+                    @include lg {
+                        display: none;
+                    }
+                }
+
+                .shoppingCartButton {
+                    position: absolute;
+                    right: 40px;
+                    top: 50px;
+
+                    @include lg {
+                        display: none;
+                    }
+                }
+
                 .favoriteButton {
                     position: absolute;
                     z-index: 0;
