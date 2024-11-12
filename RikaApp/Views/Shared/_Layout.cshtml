@@ -14,26 +14,14 @@
 </head>
 <body>
     <div class="wrapper">
-        
-        <header>
-            <a class="menu-link" asp-controller="Home" asp-action="Index">Home</a>
-            <a class="menu-link" asp-controller="Products" asp-action="Index">Products</a>
-            <a class="menu-link" asp-controller="Categories" asp-action="Index">Categories</a>
-            <a class="menu-link" asp-controller="MyCart" asp-action="Index">My Cart</a>
-            <a class="menu-link" asp-controller="Orders" asp-action="Index">My Orders</a>
-            <a class="menu-link" asp-controller="Profile" asp-action="Index">My Profile</a>
-            
-        </header>
-
+        @await Html.PartialAsync("~/Views/Shared/HeaderAndFooter/_Header.cshtml")
+      
         <main>
             @RenderBody()
 
         </main>
         
-        <footer>
-            <a class="menu-link" asp-controller="AdminProductPortal" asp-action="Index">Admin Products Portal</a>
-        </footer>
-
+        @await Html.PartialAsync("~/Views/Shared/HeaderAndFooter/_Footer.cshtml")
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
