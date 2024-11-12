@@ -782,6 +782,7 @@ form .form-content a:hover {
 
 #admin-all-products {
   margin-top: 2rem;
+  padding: 7.5rem 0;
 }
 #admin-all-products .container {
   position: relative;
@@ -843,6 +844,7 @@ form .form-content a:hover {
 
 #editProduct {
   margin-top: 2rem;
+  padding: 9rem 0;
 }
 #editProduct .container {
   padding: 2rem;
@@ -913,6 +915,7 @@ form .form-content a:hover {
 
 #admin-create {
   margin-top: 2rem;
+  padding: 9rem 0;
 }
 #admin-create .container {
   padding: 2rem;
