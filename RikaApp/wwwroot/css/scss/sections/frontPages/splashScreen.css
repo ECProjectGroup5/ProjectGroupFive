@@ -1,0 +1,48 @@
+﻿.splash-screen {
+  height: 100vh;
+  background-color: #CCCCCC;
+}
+.splash-screen .container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.splash-screen .container .company-text {
+  transition: transform 2s ease-out, opacity 1s ease-out;
+  position: absolute;
+}
+.splash-screen .container .company-text .image {
+  height: 69px;
+  width: 166px;
+  background-color: white;
+}
+.splash-screen .container .login-options {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  margin-bottom: 100rem;
+}
+.splash-screen .container .login-options a {
+  width: 100%;
+  text-decoration: none;
+  border: solid white 1px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 30px;
+  padding: 0.5rem;
+  color: white;
+}
+.splash-screen .container .login-options a:first-child {
+  color: black;
+  background-color: white;
+}
+.splash-screen .container .login-options a:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}

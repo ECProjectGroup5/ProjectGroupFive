@@ -42,5 +42,17 @@
   {
     "outputFile": "wwwroot/css/scss/sections/adminproductportal/_adminProductList.css",
     "inputFile": "wwwroot/css/scss/sections/adminproductportal/_adminProductList.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/scss/sections/supportCall/telephoneCall.css",
+    "inputFile": "wwwroot/css/scss/sections/supportCall/telephoneCall.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/scss/sections/frontPages/onboarding.css",
+    "inputFile": "wwwroot/css/scss/sections/frontPages/onboarding.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/scss/sections/frontPages/splashScreen.css",
+    "inputFile": "wwwroot/css/scss/sections/frontPages/splashScreen.scss"
   }
 ]

@@ -978,3 +978,192 @@ form .form-content a:hover {
 #admin-create form button[type=submit]:hover {
   background-color: #0056b3;
 }
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.support-call {
+  height: 100%;
+}
+.support-call .container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+.support-call .container .profile-picture {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.support-call .container .profile-picture img {
+  height: 110px;
+  width: 110px;
+  background-color: #CCCCCC;
+  border-radius: 50%;
+  border: solid 3px #02BC49;
+  margin-bottom: 1rem;
+}
+.support-call .container .profile-picture h4 {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.support-call .container .profile-picture span {
+  color: #AAAAAA;
+}
+.support-call .container .call-functions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.support-call .container .call-functions div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.support-call .container .call-functions div i {
+  background-color: #EEEEEE;
+  padding: 1rem;
+  border-radius: 50%;
+  color: black;
+}
+.support-call .container .call-functions div span {
+  color: #AAAAAA;
+}
+.support-call .container .end-call {
+  border: none;
+  color: white;
+  outline: none;
+  border-radius: 50%;
+  padding: 1.25rem 1.5rem;
+  background-color: #FF0000;
+}
+
+.splash-screen {
+  height: 100vh;
+  background-color: #CCCCCC;
+}
+.splash-screen .container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.splash-screen .container .company-text {
+  transition: transform 2s ease-out, opacity 1s ease-out;
+  position: absolute;
+}
+.splash-screen .container .company-text .image {
+  height: 69px;
+  width: 166px;
+  background-color: white;
+}
+.splash-screen .container .login-options {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  margin-bottom: 100rem;
+}
+.splash-screen .container .login-options a {
+  width: 100%;
+  text-decoration: none;
+  border: solid white 1px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 30px;
+  padding: 0.5rem;
+  color: white;
+}
+.splash-screen .container .login-options a:first-child {
+  color: black;
+  background-color: white;
+}
+.splash-screen .container .login-options a:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+.onboarding .container .slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+.onboarding .container .slider-container .slider {
+  display: flex;
+  transition: transform 1s ease;
+  height: 100%;
+}
+.onboarding .container .slider-container .slider-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  font-size: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.onboarding .container .slider-container .slider-item .image {
+  height: 400px;
+  width: 345px;
+  background-color: #CCCCCC;
+}
+.onboarding .container .slider-container .slider-item h2 {
+  font-weight: bold;
+  color: black;
+  font-size: 30px;
+}
+.onboarding .container .slider-container .slider-item p {
+  font-weight: normal;
+  font-size: 15px;
+  color: #666666;
+}
+.onboarding .container .slider-container .slider-item a {
+  align-self: end;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 0.5rem 1.25rem;
+}
+.onboarding .container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+}
+.onboarding .container button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.onboarding .container .prev {
+  left: 10px;
+}
+.onboarding .container .next {
+  right: 10px;
+}

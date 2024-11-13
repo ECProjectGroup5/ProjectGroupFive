@@ -1,0 +1,71 @@
+﻿*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.support-call {
+  height: 100%;
+}
+.support-call .container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+.support-call .container .profile-picture {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.support-call .container .profile-picture img {
+  height: 110px;
+  width: 110px;
+  background-color: #CCCCCC;
+  border-radius: 50%;
+  border: solid 3px #02BC49;
+  margin-bottom: 1rem;
+}
+.support-call .container .profile-picture h4 {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.support-call .container .profile-picture span {
+  color: #AAAAAA;
+}
+.support-call .container .call-functions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.support-call .container .call-functions div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.support-call .container .call-functions div i {
+  background-color: #EEEEEE;
+  padding: 1rem;
+  border-radius: 50%;
+  color: black;
+}
+.support-call .container .call-functions div span {
+  color: #AAAAAA;
+}
+.support-call .container .end-call {
+  border: none;
+  color: white;
+  outline: none;
+  border-radius: 50%;
+  padding: 1.25rem 1.5rem;
+  background-color: #FF0000;
+}
