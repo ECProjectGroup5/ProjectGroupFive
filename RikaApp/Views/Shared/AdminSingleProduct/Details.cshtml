@@ -8,49 +8,57 @@
         <h2>Edit Product</h2>
         <form asp-controller="AdminSingleProduct" asp-action="UpdateProduct" method="post">
 
-            <input type="hidden" asp-for="Product!.ArticleNumber"/>
+            <input type="hidden" asp-for="Product.ArticleNumber" />
+
             <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" id="title" name="Product.Title" value="@Model!.Product!.Title" class="form-control" required />
+                <label asp-for="Product.Title"></label>
+                <input asp-for="Product.Title" class="form-control" required />
+                <span asp-validation-for="Product.Title" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="ingress">Ingress</label>
-                <textarea id="ingress" name="Product.Ingress" class="form-control">@Model.Product.Ingress</textarea>
+                <label asp-for="Product.Ingress"></label>
+                <textarea asp-for="Product.Ingress" class="form-control"></textarea>
+                <span asp-validation-for="Product.Ingress" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="description">Description</label>
-                <textarea id="description" name="Product.Description" class="form-control">@Model.Product.Description</textarea>
+                <label asp-for="Product.Description"></label>
+                <textarea asp-for="Product.Description" class="form-control"></textarea>
+                <span asp-validation-for="Product.Description" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="price">Price</label>
-                <input type="text" id="price" name="Product.Price" value=@Model.Product.Price.ToString("F2") class="form-control" required />
+                <label asp-for="Product.Price"></label>
+                <input asp-for="Product.Price" type="number" step="0.01" class="form-control" required />
+                <span asp-validation-for="Product.Price" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="discountPrice">Discount Price</label>
-                <input type="text" id="discountPrice" name="Product.DiscountPrice" class="form-control" value=@Model.Product.DiscountPrice.ToString("F2") />
+                <label asp-for="Product.DiscountPrice"></label>
+                <input asp-for="Product.DiscountPrice" type="number" step="0.01" class="form-control" />
+                <span asp-validation-for="Product.DiscountPrice" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="manufacturer">Manufacturer</label>
-                <input type="text" id="manufacturer" name="Product.Manufacturer" value="@Model.Product.Manufacturer" class="form-control" />
+                <label asp-for="Product.Manufacturer"></label>
+                <input asp-for="Product.Manufacturer" class="form-control" />
+                <span asp-validation-for="Product.Manufacturer" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="primaryImage">Primary Image URL</label>
-                <input type="text" id="primaryImage" name="Product.PrimaryImage" value="@Model.Product.PrimaryImage" class="form-control" />
+                <label asp-for="Product.PrimaryImage"></label>
+                <input asp-for="Product.PrimaryImage" class="form-control" />
+                <span asp-validation-for="Product.PrimaryImage" class="text-danger"></span>
             </div>
 
             <button type="submit" class="btn btn-primary">Update Product</button>
         </form>
-        <div class="admin-single-delete">
+
+        <div class="admin-single-delete mt-3">
             <form asp-controller="AdminSingleProduct" asp-action="DeleteProduct" asp-route-articleNumber="@Model.Product.ArticleNumber" method="post">
                 <button type="submit" class="delete-product-button btn btn-danger">Delete</button>
             </form>
         </div>
-
     </div>
 </section>

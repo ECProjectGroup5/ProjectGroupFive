@@ -48,8 +48,7 @@ public class AdminSingleProductController(HttpClient client) : Controller
     [HttpPost]
     public async Task<IActionResult> UpdateProduct(ProductsViewModel viewModel)
     {
-        if (ModelState.IsValid)
-        {
+       
             try
             {
                 if (viewModel.Product != null)
@@ -96,7 +95,7 @@ public class AdminSingleProductController(HttpClient client) : Controller
                 Console.WriteLine(ex.Message);
                 ModelState.AddModelError(string.Empty, "An unexpected error occurred. Please try again.");
             }
-        }
+        
 
    
         if (viewModel.Product == null)
