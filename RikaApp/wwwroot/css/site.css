@@ -1167,3 +1167,167 @@ html, body {
 .onboarding .container .next {
   right: 10px;
 }
+
+.categories-page3 {
+  margin-top: 8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.category-box {
+  background-color: #cccccc;
+  border-radius: 10px;
+  position: relative;
+  height: 150px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 10px;
+}
+.category-box .category-content {
+  width: 100%;
+}
+.category-box .category-text-box {
+  background-color: #ffffff;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Specifika stilar för sökfält och kategorier från tidigare sidor */
+.search-container {
+  position: relative;
+}
+.search-container .search-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding-right: 20px;
+}
+.search-container .search-button img.search-icon {
+  width: 20px;
+  height: 20px;
+}
+.search-container .search-box {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 150px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-container-page2, .search-container-page3 {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  width: 85%;
+  margin: 10px auto;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.search-container-page2 .search-button-page2, .search-container-page2 .search-button-page3, .search-container-page3 .search-button-page2, .search-container-page3 .search-button-page3 {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+.search-container-page2 .search-button-page2 img.search-icon-page2, .search-container-page2 .search-button-page2 img.search-icon-page3, .search-container-page2 .search-button-page3 img.search-icon-page2, .search-container-page2 .search-button-page3 img.search-icon-page3, .search-container-page3 .search-button-page2 img.search-icon-page2, .search-container-page3 .search-button-page2 img.search-icon-page3, .search-container-page3 .search-button-page3 img.search-icon-page2, .search-container-page3 .search-button-page3 img.search-icon-page3 {
+  width: 20px;
+  height: 20px;
+}
+.search-container-page2 .search-box-page2, .search-container-page2 .search-box-page3, .search-container-page3 .search-box-page2, .search-container-page3 .search-box-page3 {
+  flex: 1;
+  border: none;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 20px;
+  outline: none;
+}
+
+.categories {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.categories .categories-title {
+  text-align: left;
+  width: 90%;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+.categories .category-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 45px;
+  width: 90%;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.categories .category-button img {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+}
+.categories .category-button span {
+  flex: 1;
+  padding-left: 10px;
+}
+.categories .info {
+  font-size: 11px;
+  color: #cccccc;
+  margin-left: auto;
+}
+
+.categories-page2 {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+.categories-page2 .category-button-page2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  width: 90%;
+  background-color: #cccccc;
+  color: #000000;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.categories-page2 .category-button-page2:nth-child(odd) .category-text {
+  text-align: left;
+  width: 100%;
+}
+.categories-page2 .category-button-page2:nth-child(even) .category-text {
+  text-align: right;
+  width: 100%;
+}
+.categories-page2 .category-button-page2 .category-text {
+  font-size: 17px;
+  color: #333;
+}
+.categories-page2 .category-button-page2 .info-page2 {
+  font-size: 11px;
+  color: #333;
+  margin-left: 5px;
+}

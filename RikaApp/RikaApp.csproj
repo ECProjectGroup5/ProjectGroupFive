@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
@@ -19,6 +19,7 @@
     <Folder Include="wwwroot\css\scss\sections\adminSingleProduct\" />
     <Folder Include="wwwroot\css\scss\sections\frontPages\" />
     <Folder Include="wwwroot\css\scss\sections\supportCall\" />
+    <Folder Include="wwwroot\images\CategoriesImg\" />
   </ItemGroup>
 
   <ItemGroup>
