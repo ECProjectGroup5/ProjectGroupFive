@@ -26,7 +26,14 @@
                         <div class="admin-product-info">
                             <div class="title-price">
                                     <h6>@product.Title</h6>
-                                    <p class="price">@product.Price</p>
+                                    <p class="price">$ @{
+                                        
+                                        var formattedPrice = product.Price % 1 == 0
+                                        ? product.Price.ToString("F0") // Visa som heltal om decimalerna är 0
+                                        : product.Price.ToString("F2"); // Visa med två decimaler annars
+                                    }
+                                    @formattedPrice
+                                </p>
                             </div>
                             <p class="admin-description">@product.Description</p>
                         </div>
